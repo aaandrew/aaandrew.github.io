@@ -1,12 +1,66 @@
 <head>
 <title>Marshmallows</title>
+<link href="campfire.css" rel="stylesheet" type="text/css" />
 <link href="index.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<div class="black">hi</div>
+	<button class="js-restart restart-button" alt="Restart">
+	  <svg viewBox="-4.13299 97.344 776.34399 829.406">
+	    <use xlink:href="#svg-octicon-replay"></use>
+	  </svg>
+	</button>
+
+
+	<div class="animation-wrapper">
+	  <div class="gitter-background-stage"></div>
+	  <div class="nighttime-background-stage"></div>
+
+	  <div class="gitter-logo-main-area">
+	    <div class="gitter-logo-wrapper">
+	      <div class="gitter-logo-text-wrapper">
+
+	        <h1 class="gitter-logo-name">
+	          <a href="https://gitter.im/" class="gitter-logo-name-link">Gitter</a>
+	        </h1>
+
+	        <h2 class="gitter-logo-tagline">Fueling open source communities</h2>
+
+	        <a href="https://gitter.im/" class="gitter-go-explore-link">Explore or start your own community <svg class="external-link-icon" viewBox="0 0 1024 1024"><use xlink:href="#svg-octicon-link-external"></use></svg></a>
+	      </div>
+	    </div>
+	    <div class="campfire-wrapper"></div>
+	  </div>
+	</div>
+
+
+	<svg class="hidden">
+	  <defs>
+	    <g id="svg-flame">
+	      <path d="M119.933,348.008c25.893-3.23,60.951-22.324,73.135-37.639c16.943-21.295,22.934-40.418,22.514-56.221c-1.065,6.381-10.676,24.195-24.477,30.045c19.594-16.064,42.629-82.426,1.91-147.568c3.965,9.838,7.928,44.292-19.503,80.873c15.54-20.703,27.127-84.367-20.436-157.448c1.595,4.786,6.707,15.67,0.226,34.607C154.648,73.846,131.427,17.471,87.895,0c34.081,38.036,12.741,85.573-0.065,115.482c-6.554,15.312-4.189,28.632-4.721,39.267c-1.063-9.041,1.368-43.043-20.279-61.731c5.792,7.773,4.573,27.205-3.049,38.695C49.244,147.597,5.816,182.1,30.462,227.6c-6.657-0.984-17.633-18.063-12.451-38.826c-21.478,29.736-1.104,70.01,10.062,80.115C7.646,263.11-0.509,239.393,0.024,234.075c0,10.637,1.474,23.127,4.913,31.816c28.928,73.074,84.49,81.42,110.941,82.117H119.933z"
+	      />
+
+	      <path fill="currentColor" d="M114.861,347.59C97.043,334.637,89.3,326.956,77.47,310.2c-12.943-18.334-14.2-45.551-7.101-66.85c6.626-20.352,18.933-37.281,30.292-55.74c11.36-18.46,23.194-34.135,28.399-55.435c4.734-19.879,4.58-47.332-4.885-61.64c13.879,17.612,25.711,47.022,30.918,72.108c2.367,13.727,3.785,29.346,0,43.071c-3.313,14.672-14.673,25.824-21.299,40.025c-6.627,14.199-8.09,40.682,1.85,53.934c12.307-8.52,35.541-18.193,38.381-41.893c30.767,65.01-55.986,79.934-54.092,110.227L114.861,347.59z"
+	      />
+	    </g>
+
+	    <g id="svg-octicon-replay">
+	      <path d="M655.461 473.469c11.875 81.719-13.062 167.781-76.812 230.594-94.188 92.938-239.5 104.375-346.375 34.562l74.875-73L31.96 627.25 70.367 896l84.031-80.5c150.907 111.25 364.938 100.75 502.063-34.562 79.5-78.438 115.75-182.562 111.25-285.312L655.461 473.469zM189.46 320.062c94.156-92.938 239.438-104.438 346.313-34.562l-75 72.969 275.188 38.406L697.586 128l-83.938 80.688C462.711 97.34400000000005 248.742 107.96900000000005 111.585 243.25 32.085 321.656-4.133 425.781 0.335 528.5l112.25 22.125C100.71 468.875 125.71 382.906 189.46 320.062z"
+	      />
+	    </g>
+
+	    <g id="svg-octicon-link-external">
+	      <path d="M640 768H128V257.90599999999995L256 256V128H0v768h768V576H640V768zM384 128l128 128L320 448l128 128 192-192 128 128V128H384z" />
+	    </g>
+	  </defs>
+	</svg>
 
 
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="https://cdn.rawgit.com/paulirish/12fb951a8b893a454b32/raw/2a1c52db632d9f8cefe1e821ff74309a200af230/bling.js"></script>
+	<script type="text/javascript" src="http://codepen.io/anon/pen/rVYzYL.js#object-assign"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
+	<script type="text/javascript" src="js/campfire.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 </body>
+

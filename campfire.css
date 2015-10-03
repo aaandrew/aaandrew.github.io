@@ -1,0 +1,190 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+.restart-button {
+  z-index: 2;
+  position: absolute;
+  width: 100px;
+  padding: 20px;
+  background: none;
+  border: 0;
+  color: inherit;
+  fill: currentColor;
+  cursor: hand;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+          transition: all 0.2s ease;
+}
+.restart-button:hover, .restart-button:focus {
+  fill: rgba(230, 230, 230, 0.9);
+  /* We use filter so we can have a shadow around the transparent svg */
+  filter: drop-shadow(0px 3px 7px rgba(0, 0, 0, 0.5));
+  -webkit-filter: drop-shadow(0px 3px 7px rgba(0, 0, 0, 0.5));
+  outline: none;
+}
+
+.external-link-icon {
+  height: 1em;
+  fill: currentColor;
+  vertical-align: middle;
+}
+
+.animation-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.gitter-background-stage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: -webkit-linear-gradient(90deg, #c80546, #ff0064);
+  background: linear-gradient(0deg, #c80546, #ff0064);
+}
+
+.nighttime-background-stage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: -webkit-linear-gradient(top, #252336 0%, #1b1c2f 56%, #080b1d 100%);
+  background: linear-gradient(to bottom, #252336 0%, #1b1c2f 56%, #080b1d 100%);
+}
+
+.gitter-logo-main-area {
+  width: 100%;
+  height: 100%;
+}
+
+.gitter-logo-wrapper {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  font-size: 0;
+  line-height: 0;
+  -webkit-transform: translate(-40%, -20%);
+      -ms-transform: translate(-40%, -20%);
+          transform: translate(-40%, -20%);
+}
+
+.gitter-logo-text-wrapper {
+  position: absolute;
+}
+
+.gitter-logo-bar {
+  position: absolute;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.gitter-logo-name {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.gitter-logo-name-link {
+  text-decoration: none;
+}
+.gitter-logo-name-link:link {
+  color: inherit;
+}
+.gitter-logo-name-link:visited {
+  color: inherit;
+}
+
+.gitter-logo-name-letter {
+  position: relative;
+  display: inline-block;
+}
+
+.gitter-logo-tagline {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.gitter-go-explore-link {
+  position: absolute;
+  color: rgba(179, 179, 179, 0.9);
+  font-size: 12px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.campfire-wrapper {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  -webkit-transform: translate(-40%, -20%);
+      -ms-transform: translate(-40%, -20%);
+          transform: translate(-40%, -20%);
+}
+
+.campfire-flame {
+  position: absolute;
+  display: block;
+  width: 90px;
+  fill: #e92d00;
+  /* inner flame */
+  color: #ff8a00;
+}
+
+.campfire-flame-glow {
+  position: absolute;
+  background: -webkit-radial-gradient(center, ellipse, rgba(255, 138, 0, 0.15) 0%, rgba(0, 0, 0, 0) 50%);
+  background: radial-gradient(ellipse at center, rgba(255, 138, 0, 0.15) 0%, rgba(0, 0, 0, 0) 50%);
+  background: -webkit-radial-gradient(50% 50%, at 50% 50%, rgba(255, 138, 0, 0.15) 0%, rgba(0, 0, 0, 0) 50%);
+  background: radial-gradient(at 50% 50% at 50% 50%, rgba(255, 138, 0, 0.15) 0%, rgba(0, 0, 0, 0) 50%);
+  pointer-events: none;
+}
+
+.logo-ember {
+  position: absolute;
+  /*background: #ffff00;*/
+  /* We use filter so we can have a shadow around the transparent images */
+  filter: drop-shadow(0px 3px 7px rgba(0, 0, 0, 0.5));
+  -webkit-filter: drop-shadow(0px 3px 7px rgba(0, 0, 0, 0.5));
+}
