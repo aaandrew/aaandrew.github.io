@@ -95,7 +95,7 @@ body {
 .gitter-logo-wrapper {
   position: absolute;
   top: 40%;
-  left: 20%;
+  left: 50%;
   font-size: 0;
   line-height: 0;
   -webkit-transform: translate(-40%, -20%);
@@ -137,13 +137,15 @@ body {
 }
 
 .gitter-logo-name-letter {
-  position: relative;
-  display: inline-block;
+  position: absolute;
+  display: none;
 }
 
 .gitter-logo-tagline {
   font-size: 12px;
   white-space: nowrap;
+  position: absolute;
+  display: none;
 }
 
 .gitter-go-explore-link {
@@ -152,12 +154,13 @@ body {
   font-size: 12px;
   white-space: nowrap;
   text-decoration: none;
+  display: none;
 }
 
 .campfire-wrapper {
   position: absolute;
-  top: 40%;
-  left: 20%;
+  top: 45%;
+  left: 45%;
   -webkit-transform: translate(-40%, -20%);
       -ms-transform: translate(-40%, -20%);
           transform: translate(-40%, -20%);
