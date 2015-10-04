@@ -162,7 +162,7 @@ tl
 // Create the campfire embers
 let projectEmberNodes = [];
 projectUsernames.forEach((projectUsername) => {
-  let imageNode = stringToDom(`<img class="logo-ember" src="https://avatars.githubusercontent.com/${projectUsername}?s=${12 * scale}">`);
+  let imageNode = stringToDom(`<img class="logo-ember" src="assets/particle_flame.png">`);
   projectEmberNodes.push(imageNode);
 
   campfireWrapperNode.appendChild(imageNode);

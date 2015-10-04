@@ -1,0 +1,35 @@
+.sprite {
+    background-image: url(assets/spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-marshmallow_0{
+    width: 115px;
+    height: 286px;
+    background-position: -5px -5px;
+}
+
+.sprite-marshmallow_1 {
+    width: 115px;
+    height: 286px;
+    background-position: -130px -5px;
+}
+
+.sprite-marshmallow_2 {
+    width: 115px;
+    height: 286px;
+    background-position: -255px -5px;
+}
+
+.sprite-marshmallow_3 {
+    width: 115px;
+    height: 286px;
+    background-position: -380px -5px;
+}
+
+.sprite-marshmallow_4 {
+    width: 115px;
+    height: 286px;
+    background-position: -5px -301px;
+}
