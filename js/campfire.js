@@ -175,8 +175,8 @@ logoPieces.forEach((logoPiece) => {
   barNode.classList.add('gitter-logo-bar');
   logoPieceNodes.push(barNode);
 
-  $('.gitter-logo-wrapper').forEach((logoWrapperNode) => {
-    logoWrapperNode.appendChild(barNode);
+  $('.gitter-logo-wrapper').each(function(logoWrapperNode){
+    $(this).append(barNode);
   });
 
   tl
@@ -194,50 +194,10 @@ logoPieces.forEach((logoPiece) => {
 // Create the Gitter Logo Text
 let logoTextWrapperNode = $('.gitter-logo-text-wrapper')[0];
 let logoNameNode = $('.gitter-logo-name')[0];
-let logoNameLinkNode = $('.gitter-logo-name-link')[0];
 let logoTaglineNode = $('.gitter-logo-tagline')[0];
 let logoExploreLinkNode = $('.gitter-go-explore-link')[0];
 let logoLetterNodes = [];
 
-let logoText = logoNameLinkNode.textContent;
-// Clear out the text
-logoNameLinkNode.innerHTML = '';
-// And replace it with individually wrapped letters
-Array.prototype.forEach.call(logoText, function(logoLetter) {
-  let letterNode = stringToDom(`<span class="gitter-logo-name-letter">${logoLetter}</span>`);
-  logoLetterNodes.push(letterNode);
-  logoNameLinkNode.appendChild(letterNode);
-});
-
-// Move it to the right of the logo/fire
-tl
-  .set(
-    logoTextWrapperNode, {
-      left: `${getFlameBounds().width}px`
-    },
-    0
-  );
-
-// Set the proper font size
-tl
-  .set(
-    logoNameNode, {
-      fontSize: `${18 * scale}px`
-    },
-    0
-  )
-  .set(
-    logoTaglineNode, {
-      fontSize: `${6 * scale}px`
-    },
-    0
-  )
-  .set(
-    logoExploreLinkNode, {
-      fontSize: `${5 * scale}px`
-    },
-    0
-  );
 
 // Fall into the Gitter Logo
 // ---------------------------------
@@ -392,22 +352,6 @@ tl
   )
   .addLabel('campfire-flame-ignite');
 
-// Slide in the tagline
-tl
-  .fromTo(
-    logoTaglineNode,
-    0.5, {
-      x: -10 * scale,
-      scale: 1.3,
-      autoAlpha: 0
-    }, {
-      x: 5 * scale,
-      scale: 1,
-      autoAlpha: 1,
-      ease: Power4.easeOut
-    },
-    'campfire-flame-=0.25'
-  );
 
 // Embers appear on campfire
 // ---------------------------------
@@ -459,40 +403,3 @@ tl
   .add(function() {
     emberTl.restart();
   });
-
-// After a little while transition in the call to action
-let getExploreLinkOffset = () => {
-  let documentBounds = document.body.getBoundingClientRect();
-  let exploreLinkBounds = logoExploreLinkNode.getBoundingClientRect();
-
-  let exploreLinkTopOffset = 20 * scale;
-
-  let overflow = (exploreLinkTopOffset + (exploreLinkBounds.top + exploreLinkBounds.height)) - documentBounds.height;
-
-  console.log(exploreLinkTopOffset, overflow, ':', documentBounds.height, exploreLinkBounds.top, '+', exploreLinkBounds.height);
-  if (overflow > 0) {
-    exploreLinkTopOffset -= overflow;
-  }
-
-  return exploreLinkTopOffset;
-}
-let exploreLinkOffset = getExploreLinkOffset();
-tl
-  .set(
-    logoExploreLinkNode, (() => {
-      return {
-        y: exploreLinkOffset + (10 * scale),
-        autoAlpha: 0
-      };
-    })(),
-    0
-  )
-  .to(
-    logoExploreLinkNode,
-    0.1, {
-      y: exploreLinkOffset,
-      autoAlpha: 1,
-      ease: Back.easeOut.config(1.7)
-    },
-    'ember-start+=0.5'
-  );

@@ -136,27 +136,6 @@ body {
   color: inherit;
 }
 
-.gitter-logo-name-letter {
-  position: absolute;
-  display: none;
-}
-
-.gitter-logo-tagline {
-  font-size: 12px;
-  white-space: nowrap;
-  position: absolute;
-  display: none;
-}
-
-.gitter-go-explore-link {
-  position: absolute;
-  color: rgba(179, 179, 179, 0.9);
-  font-size: 12px;
-  white-space: nowrap;
-  text-decoration: none;
-  display: none;
-}
-
 .campfire-wrapper {
   position: absolute;
   top: 30%;
