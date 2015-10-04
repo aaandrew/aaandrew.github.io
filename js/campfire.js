@@ -13,34 +13,34 @@ let getFlameBounds = () => {
   return flameBoundRect;
 }
 
-let scale = 5;
+let scale = 10;
 
 let logoPieces = [{
   x: 0,
   y: 0,
-  width: 3,
-  height: 25
+  width: 2,
+  height: 15
 }, {
   x: 5,
   y: 4,
-  width: 3,
-  height: 30
+  width: 2,
+  height: 20
 }, {
   x: 10,
   y: 4,
-  width: 3,
-  height: 30
+  width: 2,
+  height: 20
 }, {
   x: 15,
   y: 4,
-  width: 3,
-  height: 21
+  width: 2,
+  height: 11
 }];
 
 let logoFirePlacePieces = [{
   x: 6,
   y: 28,
-  width: 3,
+  width: 2,
   height: 15,
   rotation: 45
 }, {
@@ -62,6 +62,34 @@ let logoFirePlacePieces = [{
   height: 11,
   rotation: -45
 }];
+
+// Gitter fuels all of these communities
+// https://avatars.githubusercontent.com/jspm?s=30
+let projectUsernames = [
+  'jspm',
+  'postcss',
+  'marionettejs',
+  'babel',
+  'nodejs',
+  'angular',
+  'webpack',
+  'meteor',
+  'rails',
+  'strongloop',
+  'emberjs',
+  'scala-js',
+  'adobe',
+  'cdnjs',
+  'gulpjs',
+  'nodegit',
+  'cakephp',
+  'magento',
+  'joomla',
+  'travis-ci',
+  'esp8266',
+  'django',
+  'atom'
+];
 
 let tl = new TimelineMax({
   delay: 0.5
@@ -109,7 +137,7 @@ campfireWrapperNode.appendChild(flameNode);
 tl
   .set(
     flameNode, {
-      width: `${40.5 * scale}px`
+      width: `${22.5 * scale}px`
     },
     0
   );
@@ -131,7 +159,14 @@ tl
     0
   );
 
+// Create the campfire embers
+let projectEmberNodes = [];
+projectUsernames.forEach((projectUsername) => {
+  let imageNode = stringToDom(`<img class="logo-ember" src="https://avatars.githubusercontent.com/${projectUsername}?s=${12 * scale}">`);
+  projectEmberNodes.push(imageNode);
 
+  campfireWrapperNode.appendChild(imageNode);
+});
 
 // Create the Gitter logo pieces
 let logoPieceNodes = [];
@@ -384,6 +419,41 @@ let emberTl = new TimelineMax({
   paused: true
 });
 
+projectEmberNodes.forEach((emberNode, emberIndex) => {
+  emberTl
+    .fromTo(
+      emberNode,
+      0.5, (() => {
+        let flameBounds = getFlameBounds();
+
+        return {
+          top: Math.random() * (0.5 * flameBounds.height) + (0.25 * flameBounds.height),
+          left: Math.random() * flameBounds.width - (emberNode.getBoundingClientRect().width / 2),
+          scale: 0.8,
+          autoAlpha: 0
+        };
+      })(), {
+        scale: 1,
+        autoAlpha: 1
+      },
+      `emberFadeIn${emberIndex}`
+    )
+    .to(
+      emberNode,
+      1, {
+        top: '0px',
+        ease: SlowMo.ease.config(0.5, 0.4, false)
+      },
+      `emberFadeIn${emberIndex}+=0`
+    )
+    .to(
+      emberNode,
+      0.25, {
+        autoAlpha: 0
+      },
+      '-=0.25'
+    );
+});
 // Start the ember loop going
 tl
   .add(function() {
